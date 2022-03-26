@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
+  debugPaintSizeEnabled = true;
   runApp(const MyApp());
 }
 
@@ -98,9 +100,15 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Container(
+              width: double.infinity,
+              color:Colors.red,
+              child: Center(
+                child: Text(
+                  '$_counter',
+                  style: Theme.of(context).textTheme.headline4,
+                ),
+              ),
             ),
           ],
         ),
